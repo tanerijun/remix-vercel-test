@@ -38,6 +38,6 @@ export default function Index() {
 	)
 }
 
-export const headers: HeadersFunction = ({ loaderHeaders }) => ({
-	"Cache-Control": loaderHeaders.get("Cache-Control") ?? "no-cache",
-})
+// export const headers: HeadersFunction = ({ loaderHeaders }) => ({
+// 	"Cache-Control": loaderHeaders.get("Cache-Control") ?? "no-cache",
+// })
