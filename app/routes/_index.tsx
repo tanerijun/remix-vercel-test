@@ -22,7 +22,7 @@ export async function loader() {
 
 	return json(
 		{ message: `Random number: ${Math.floor(Math.random() * 10)}` },
-		{ headers: { "Cache-Control": "public, max-age=10, s-maxage=60" } }
+		{ headers: { "Cache-Control": "s-maxage=60" } }
 	)
 }
 
@@ -38,6 +38,6 @@ export default function Index() {
 	)
 }
 
-// export const headers: HeadersFunction = ({ loaderHeaders }) => ({
-// 	"Cache-Control": loaderHeaders.get("Cache-Control") ?? "no-cache",
-// })
+export const headers: HeadersFunction = ({ loaderHeaders }) => ({
+	"Cache-Control": loaderHeaders.get("Cache-Control") ?? "no-cache",
+})
