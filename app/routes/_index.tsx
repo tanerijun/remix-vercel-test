@@ -1,7 +1,7 @@
 import { json } from "@remix-run/node"
-import type { HeadersFunction, V2_MetaFunction } from "@remix-run/node"
+import type { V2_MetaFunction } from "@remix-run/node"
 // import { LIGHT_NOVELS } from "@consumet/extensions"
-import { Link, useLoaderData } from "@remix-run/react"
+import { useLoaderData } from "@remix-run/react"
 
 export const meta: V2_MetaFunction = () => {
 	return [{ title: "New Remix App" }, { name: "description", content: "Welcome to Remix!" }]
@@ -31,13 +31,9 @@ export default function Index() {
 
 	return (
 		<div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
+			<h1>Index page</h1>
 			<p>{data.message}</p>
 			{/* <img src={data.results[0].image} alt="sample" /> */}
-			<Link to="/about">About Page</Link>
 		</div>
 	)
 }
-
-export const headers: HeadersFunction = ({ loaderHeaders }) => ({
-	"Cache-Control": loaderHeaders.get("Cache-Control") ?? "no-cache",
-})
